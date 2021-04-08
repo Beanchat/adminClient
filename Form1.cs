@@ -124,7 +124,8 @@ namespace apiClient
                 string test1 = (string)args.Result;
                 test1 = test1.Replace("@newline", "" + System.Environment.NewLine);
                 string[] array = test1.Split(Environment.NewLine);
-                lastMsgBox.Text = array.SkipLast(1).Last();
+                if (array.Length > 1) { lastMsgBox.Text = array.SkipLast(1).Last(); }
+
                 array = array.Reverse().Take(22).ToArray();
                 
 
